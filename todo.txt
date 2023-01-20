@@ -1,0 +1,39 @@
+
+npm create vite@latest
+npm install @mui/material @emotion/react @emotion/styled
+npm install @fontsource/roboto
+
+# what is @fontsource ?
+
+npm install @mui/icons-material ??
+
+# npm install react-icons --save
+# https://react.school/material-ui/styling
+
+Scope
+
+  Admin Console
+  Matchmaking
+    Tournament Tree
+    Spectate Option
+
+  Registration
+    Viewer
+    Player
+
+Routes
+  /Home
+  /Home#Schedule
+  /Register
+  /live
+  /players
+  /play
+
+
+ReactQuery
+ReactHookForm
+ReactRouter
+
+...
+
+FramerMotion
