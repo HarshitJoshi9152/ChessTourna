@@ -16,7 +16,7 @@ interface HeaderProps {
 interface HeaderItemProps {
 	children: React.ReactNode;
 	id: Key;
-	options: TypographyProps;
+	options?: TypographyProps;
 }
 
 const HeaderItem: React.FC<HeaderItemProps> = (props) => {
@@ -44,13 +44,16 @@ export const Header: React.FC<HeaderProps> = ({ fixed = false }) => {
 				position: fixed ? "fixed" : "block", // sticky vs fixed
 				top: 0,
 				left: "50%",
-				transform: "translate(-50%, -0%)",
+				transform: "translate(-50%, 0)",
 				width: "100%",
-				// backgroundColor: "white",
-				py: 1,
-				backdropFilter: "blur(5px)"
+				py: 3
+				// background: "transparent",
+				// backdropFilter: "blur(2px)", // nah make it blur on scroll
+				// transition: "0.5s all"
 			}}
 		>
+			{/* <AppBar position="static"  style={{ background: 'transparent', boxShadow: 'none'}}> */}
+			{/* https://mdbootstrap.com/docs/standard/navigation/navbar/examples-and-customization/ */}
 			<Container
 				// maxWidth={"sm"}
 				sx={{
@@ -64,12 +67,10 @@ export const Header: React.FC<HeaderProps> = ({ fixed = false }) => {
 						justifyContent: "space-between",
 						textAlign: "center"
 					}}
-					gap={2}
+					gap={10}
 				>
 					{HEADER_ITEMS.map((item) => (
-						<HeaderItem id={item} options={{ variant: "h5" }}>
-							{item}
-						</HeaderItem>
+						<HeaderItem id={item}>{item}</HeaderItem>
 					))}
 				</Box>
 			</Container>

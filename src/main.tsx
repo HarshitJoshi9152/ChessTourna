@@ -56,13 +56,13 @@ const theme = createTheme({
 			fontWeight: 600
 		},
 		h4: {
-			fontWeight: 600
+			fontWeight: 400
 		},
 		h5: {
-			fontWeight: 600
+			fontWeight: 400
 		},
 		h6: {
-			fontWeight: 600
+			fontWeight: 400
 		}
 	}
 });

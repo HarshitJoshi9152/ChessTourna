@@ -75,8 +75,7 @@ export const Footer: React.FC<FooterProps> = () => {
 					xs: "column",
 					md: "row"
 				},
-				justifyContent: "space-between",
-				height: "100vh"
+				justifyContent: "space-between"
 			}}
 			gap={{ xs: 0.5, lg: 0 }}
 		>
@@ -104,10 +103,6 @@ export const Footer: React.FC<FooterProps> = () => {
 								))}
 							</List>
 						</Paper>
-						{/* <Divider
-								orientation="vertical"
-								variant="middle"
-							></Divider> */}
 					</>
 				);
 			})}
