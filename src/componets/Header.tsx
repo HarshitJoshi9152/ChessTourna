@@ -1,57 +1,78 @@
-import { Box, Button, Container, Typography } from "@mui/material";
+import {
+	Box,
+	Button,
+	Container,
+	ListItem,
+	Typography,
+	TypographyProps
+} from "@mui/material";
+import React, { Key } from "react";
 
-export const Header = () => {
+const HEADER_ITEMS = ["Github", "Donate", "Login"];
+interface HeaderProps {
+	fixed: boolean;
+}
+
+interface HeaderItemProps {
+	children: React.ReactNode;
+	id: Key;
+	options: TypographyProps;
+}
+
+const HeaderItem: React.FC<HeaderItemProps> = (props) => {
+	const { children, id, options } = props;
 	return (
-		<Box>
-			<Box
+		<Typography
+			variant="h6"
+			sx={{
+				":hover": {
+					textDecoration: "underline solid #ffd700",
+					cursor: "pointer"
+				}
+			}}
+			{...options}
+		>
+			{children}
+		</Typography>
+	);
+};
+
+export const Header: React.FC<HeaderProps> = ({ fixed = false }) => {
+	return (
+		<Box
+			sx={{
+				position: fixed ? "fixed" : "block", // sticky vs fixed
+				top: 0,
+				left: "50%",
+				transform: "translate(-50%, -0%)",
+				width: "100%",
+				// backgroundColor: "white",
+				py: 1,
+				backdropFilter: "blur(5px)"
+			}}
+		>
+			<Container
+				// maxWidth={"sm"}
 				sx={{
 					display: "flex",
-					justifyContent: "space-between"
+					justifyContent: "space-around"
 				}}
-				// mt={2}
 			>
-				<Box>
-					<Typography variant="h5">Logo</Typography>
+				<Box
+					sx={{
+						display: "flex",
+						justifyContent: "space-between",
+						textAlign: "center"
+					}}
+					gap={2}
+				>
+					{HEADER_ITEMS.map((item) => (
+						<HeaderItem id={item} options={{ variant: "h5" }}>
+							{item}
+						</HeaderItem>
+					))}
 				</Box>
-				<Box sx={{ display: "flex" }} justifyContent={"center"} gap={2}>
-					<Typography
-						variant="h5"
-						sx={{
-							":hover": {
-								// backgroundColor: "primary.main",
-								// color: "secondary.main",
-								textDecoration: "underline solid primary"
-							}
-						}}
-					>
-						Github
-					</Typography>
-					<Typography
-						variant="h5"
-						sx={{
-							":hover": {
-								// backgroundColor: "primary.main",
-								// color: "secondary.main",
-								textDecoration: "underline solid #FFD700"
-							}
-						}}
-					>
-						Donate
-					</Typography>
-					<Typography
-						variant="h5"
-						sx={{
-							":hover": {
-								// backgroundColor: "primary.main",
-								// color: "secondary.main",
-								textDecoration: "underline solid #FFD700"
-							}
-						}}
-					>
-						Login
-					</Typography>
-				</Box>
-			</Box>
+			</Container>
 		</Box>
 	);
 };

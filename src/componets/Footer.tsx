@@ -75,7 +75,8 @@ export const Footer: React.FC<FooterProps> = () => {
 					xs: "column",
 					md: "row"
 				},
-				justifyContent: "space-between"
+				justifyContent: "space-between",
+				height: "100vh"
 			}}
 			gap={{ xs: 0.5, lg: 0 }}
 		>
@@ -93,7 +94,7 @@ export const Footer: React.FC<FooterProps> = () => {
 							<Typography variant="h5">{heading}</Typography>
 							<List>
 								{description.map((desc) => (
-									<ListItem sx={{ p: 0 }}>
+									<ListItem sx={{ p: 0 }} key={desc}>
 										<ListItemText
 										// sx={{ textAlign: "Left" }}
 										>
