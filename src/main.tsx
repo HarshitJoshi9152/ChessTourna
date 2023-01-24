@@ -7,21 +7,21 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material";
 
 // const theme = createTheme({
-// 	palette: {
-// 		primary: {
-// 			main: "#1e2022",
-// 			// main: "#222",
-// 			dark: "#111",
-// 			light: "#444",
-// 			contrastText: "#fff"
-// 		},
-// 		secondary: {
-// 			main: "#F8F8FF",
-// 			dark: "#fff",
-// 			light: "#f5f5f5",
-// 			contrastText: "#222"
-// 		}
+// palette: {
+// 	primary: {
+// 		main: "#1e2022",
+// 		// main: "#222",
+// 		dark: "#111",
+// 		light: "#444",
+// 		contrastText: "#fff"
 // 	},
+// 	secondary: {
+// 		main: "#F8F8FF",
+// 		dark: "#fff",
+// 		light: "#f5f5f5",
+// 		contrastText: "#222"
+// 	}
+// },
 // 	typography: {
 // 		h1: {
 // 			fontWeight: 800
@@ -45,6 +45,26 @@ import { createTheme, ThemeProvider } from "@mui/material";
 // });
 
 const theme = createTheme({
+	palette: {
+		primary: {
+			main: "#1e2022",
+			dark: "#111",
+			light: "#444",
+			contrastText: "#fff"
+		},
+		success: {
+			main: "#1e2022",
+			dark: "#111",
+			light: "#444",
+			contrastText: "#ffd700"
+		},
+		secondary: {
+			main: "#F8F8FF",
+			dark: "#fff",
+			light: "#f5f5f5",
+			contrastText: "#222"
+		}
+	},
 	typography: {
 		h1: {
 			fontWeight: 800

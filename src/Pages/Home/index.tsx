@@ -4,15 +4,50 @@ import React from "react";
 import { Footer } from "../../componets/Footer";
 import { Header } from "../../componets/Header";
 
+const actionItem = {
+	padding: 1
+	// fontWeight: 400,
+};
+
 const CallToAction: React.FC<{}> = () => {
 	return (
 		<Box
+			gap={1}
 			sx={{
-				display: "flex"
+				display: "flex",
+				flexDirection: "column",
+				mt: { xs: 2.5, sm: 4 }
+				// backgroundColor: "primary.main",
+				// backdropFilter: "brightness(10%)",
+				// borderRadius: "10px",
 			}}
 		>
-			<Button variant="contained" color="secondary">
-				Click me !
+			<Button variant="contained" color="success">
+				<Typography
+					sx={actionItem}
+					// variant="body1"
+					// color="primary.contrastText"
+				>
+					Global Leaderboards
+				</Typography>
+			</Button>
+			<Button variant="contained" color="success">
+				<Typography
+					sx={actionItem}
+					// variant="body1"
+					// color="primary.contrastText"
+				>
+					Register
+				</Typography>
+			</Button>
+			<Button variant="contained" color="success">
+				<Typography
+					sx={actionItem}
+					// variant="body1"
+					// color="primary.contrastText"
+				>
+					Play as Guest
+				</Typography>
 			</Button>
 		</Box>
 	);
@@ -35,7 +70,7 @@ export const Home: React.FC<{}> = (props) => {
 					// parallax effect
 					backgroundAttachment: { xs: "scroll", md: "fixed" },
 					backgroundPosition: "center",
-					height: "60vh" // kevin says avoid setting height instead set paddingy to automatically get centered text !
+					height: "80vh" // kevin says avoid setting height instead set paddingy to automatically get centered text !
 				}}
 			>
 				<Box
