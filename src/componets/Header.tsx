@@ -43,13 +43,15 @@ export const Header: React.FC<HeaderProps> = ({ fixed = false }) => {
 	return (
 		<Box
 			sx={{
-				position: { sm: "fixed" }, // sticky vs fixed
-				top: 0,
-				left: "50%",
-				transform: { sm: "translate(-50%, 0)" },
+				// position: { sm: "fixed" }, // sticky vs fixed
+				// top: 0,
+				// left: "50%",
+				// transform: { sm: "translate(-50%, 0)" },
 				width: "100%",
 				py: 3,
-				overflow: "hidden"
+				overflow: "hidden",
+				backgroundColor: "primary.main",
+				color: "primary.contrastText"
 				// background: "transparent",
 				// backdropFilter: "blur(2px)", // nah make it blur on scroll
 				// transition: "0.5s all"
@@ -105,7 +107,7 @@ export const Header: React.FC<HeaderProps> = ({ fixed = false }) => {
 					))}
 				</Box>
 				<Box>
-					<Button variant="contained" color="success">
+					<Button variant="contained" color="secondary">
 						Spectate
 					</Button>
 				</Box>
